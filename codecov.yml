@@ -1,0 +1,30 @@
+coverage:
+  status:
+    project:
+      default:
+        base: auto
+        branches:
+        - dev
+        - master
+        flags:
+        - unit
+        if_ci_failed: error
+        informational: false
+        only_pulls: false
+        paths:
+        - lib
+        target: 80%
+        threshold: 1%
+    patch:
+      default:
+        target: 80%
+  ignore:
+    - "lib/generated"  # ignore folders and all its contents
+    - "lib/gen"
+    - "lib/constants"
+    - "lib/route"
+    - "lib/firebase_options.dart"
+    - "lib/main.dart"
+    - "**/*.g.dart"
+    - "lib/service_locator"
+    - "lib/debug"
